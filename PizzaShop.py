@@ -38,8 +38,8 @@ class PizzaShop:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         print(f'{exc_type=}')  # exception類型
-        print(f'{exc_val=}')   # exception值
-        print(f'{exc_tb=}')    # traceback
+        print(f'{exc_val=}')  # exception值
+        print(f'{exc_tb=}')  # traceback
         if exc_tb:
             print(traceback.format_exc())
 
@@ -55,10 +55,31 @@ class PizzaShop:
 
         return order
 
+    def __lt__(self, other):
+        return self.star < other.star
+
+    def __le__(self, other):
+        return self.star <= other.star
+
+    def __eq__(self, other):
+        return self.star == other.star
+
+    def __gt__(self, other):
+        return self.star > other.star
+
+    def __ge__(self, other):
+        return self.star >= other.star
+
+    def __hash__(self):
+        return hash(self.shop_name)
+
 
 if __name__ == '__main__':
-    M = ['燻雞', '臘腸', '蝦仁', '蟹肉棒', '鳳梨']
-    customer_info = {'name': 'Nick', 'phone': '0974000111', 'email': 'abc@gmail.com'}
+    Da = PizzaShop(shop_name='達美樂', shop_phone='04-26655252')
+    Da2 = PizzaShop(shop_name='達美樂', shop_phone='04-26231855')
+    Na = PizzaShop(shop_name='拿坡里', shop_phone='04-26633003')
+    Bi = PizzaShop(shop_name='必勝客', shop_phone='04-26623300')
 
-    with PizzaShop(shop_name='尼克披薩', shop_phone='04-26667777', is_open=True) as Ni:
-        Ni.make_pizza(*M, sauce=SAUCE.cream, cheese=CHEESE.Cheddar, crust=CRUST.thin, **customer_info)
+    my_favorite = [Da, Da2, Na, Bi]
+
+    print(set(my_favorite))
