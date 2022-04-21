@@ -8,7 +8,7 @@ class PizzaShop:
         self.shop_name = shop_name
         self.shop_phone = shop_phone
         self.is_open = is_open
-        self.profit = 0
+        self.star = 0
 
     def __call__(self, *args, **kwargs):
         print(f'你好! 這裡是{self.shop_name}，請問要點什麼')
