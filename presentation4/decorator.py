@@ -5,3 +5,8 @@ def say_hi(func):
         return res
 
     return wrapper
+
+
+def hi(func):
+    print('hi')
+    return func

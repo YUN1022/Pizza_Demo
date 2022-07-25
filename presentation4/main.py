@@ -1,7 +1,7 @@
-from presentation4.decorator import say_hi
+from presentation4.decorator import say_hi, hi
 
 
-@say_hi
+@hi
 def fib(num: int):
     temp = [0, 1, 1]
     assert num > -1
