@@ -1,3 +1,6 @@
+import time
+
+
 def say_hi(func):
     def wrapper(*args):
         print('hi')
@@ -7,6 +10,10 @@ def say_hi(func):
     return wrapper
 
 
-def hi(func):
-    print('hi')
-    return func
+def timer(func):
+    def wrapper(*args):
+        s = time.time()
+        res = func(*args)
+        print(f'耗時: {time.time() - s}')
+        return res
+    return wrapper

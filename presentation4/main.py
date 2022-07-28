@@ -1,6 +1,7 @@
-from presentation4.decorator import say_hi, hi
+from presentation4.decorator import say_hi, timer
 
 
+@timer
 def fib(num: int):
     temp = [0, 1, 1]
     assert num > -1
@@ -14,7 +15,5 @@ def fib(num: int):
 
 
 if __name__ == '__main__':
-    fib_hi = say_hi(func=fib)
-    ans = fib_hi(10)
-
+    ans = fib(10)
     print(ans)
