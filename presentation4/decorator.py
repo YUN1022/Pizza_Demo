@@ -9,6 +9,7 @@ dev_logger.addHandler(handler)
 
 
 def say_hi(func):
+    print(f'開始執行say_hi')
     def wrapper(*args):
         print('hi')
         res = func(*args)
@@ -18,6 +19,7 @@ def say_hi(func):
 
 
 def timer(func):
+    print(f'開始執行timer')
     def wrapper(*args):
         s = time.time()
         res = func(*args)
@@ -28,6 +30,7 @@ def timer(func):
 
 
 def logger(message: str):
+    print(f'開始執行logger')
     def logging_decorator(func):
         def wrapper(*args):
             dev_logger.info(f'開始執行{message}')
