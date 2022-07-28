@@ -11,6 +11,7 @@ dev_logger.addHandler(handler)
 def say_hi(func):
     print(f'開始執行say_hi')
     def wrapper(*args):
+        print(f'開始執行say_hi的wrapper')
         print('hi')
         res = func(*args)
         return res
@@ -21,6 +22,7 @@ def say_hi(func):
 def timer(func):
     print(f'開始執行timer')
     def wrapper(*args):
+        print(f'開始執行timer的wrapper')
         s = time.time()
         res = func(*args)
         print(f'耗時: {time.time() - s}')
