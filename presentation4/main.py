@@ -1,8 +1,9 @@
 from presentation4.decorator import say_hi, timer, logger
 
 
-# @say_hi
-# @timer
+@say_hi
+@timer
+@logger('費氏數列')
 def fib(num: int):
     temp = [0, 1, 1]
     assert num > -1
@@ -16,4 +17,5 @@ def fib(num: int):
 
 
 if __name__ == '__main__':
-    timer(say_hi(fib))(10)
+    ans = fib(10)
+    print(ans)
